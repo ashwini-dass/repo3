@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- {% load humanize %} -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Price Estimate Result</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#ec926871;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-container {
+            max-width:50%;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result-container h1 {
+            margin: 0 0 20px 0;
+            color: #e95a18;
+            font-size:30px;
+        }
+        .result-value {
+            font-size: 3rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Estimated Price</h1>
+        <div class="result-value">
+            <h3>{{prediction|floatformat:'0'|intcomma}} Lakhs</h3>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

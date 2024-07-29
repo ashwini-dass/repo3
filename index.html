@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Price Estimation Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .commondiv{
+            width:100%;
+            display: flex;
+            padding-left: 0;
+        }
+        .navbar {
+            background-color: #e95a18;
+        }
+        .navbar .nav-link, .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        .carousel{
+            width:50%;
+            height:100vh;
+        }
+        .hero .carousel-item {
+            height: 100vh;
+        }
+        .carousel1{
+            background-image: url("image1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .carousel2{
+            background-image: url("image2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .carousel3{
+            background-image: url("image3.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .form-container {
+            height: 100vh;
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            padding: 50px 20px;
+            width: 50%;
+        }
+        .form-group input[type="submit"] {
+            background-color: #e95a18;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            width:300px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #b43d06;
+        }
+        .form-container form h1{
+            font-size:30px;
+            padding-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid commondiv">
+    <div id="carouselExampleIndicators" class="carousel slide hero" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active carousel1">
+            </div>
+            <div class="carousel-item carousel2">
+            </div>
+            <div class="carousel-item carousel3">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form action="" method="POST">
+            <h1>Estimate Your Land</h1>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="sqrt">Enter The Area</label>
+                <input type="number" name="sqrt" id="sqrt" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="sqrt">Property Area (sqft)</label>
+                <input type="number" name="sqrt" id="sqrt" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="bathroom">No.of Bathrooms</label>
+                <input type="number" name="bathroom" id="bathroom" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="bhk">BHK you Need</label>
+                <input type="number" name="bhk" id="bhk" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Get Estimated Price" class="btn btn-danger btn-block">
+            </div>
+        </form>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
